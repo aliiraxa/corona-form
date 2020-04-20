@@ -1,0 +1,74 @@
+/*@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap");
+
+
+body {
+  overflow-x: hidden;
+  font-family: "Montserrat", sans-serif;
+}*/
+body{
+	/*background-color: ;*/
+}
+.heading{
+	/*color: white;*/
+	font-weight: bold;
+	font-size: 20px;
+	padding-top: 15px;
+}
+fieldset{
+	background-color: white;
+}
+fieldset legend{
+	background-color: #0f75bc;
+	color: white;
+	border-radius: 10px;
+}
+.sub-heading{
+	font-weight: bold;
+	font-size: 18px;
+}
+fieldset.scheduler-border {
+    /*border: 1px groove #ddd !important;*/
+    padding: 0 1.4em 1.4em 1.4em !important;
+    margin: 0 0 1.5em 0 !important;
+    -webkit-box-shadow:  0px 0px 0px 0px #000;
+            box-shadow: 2px 2px 8px 8px #ccdae3;
+}
+
+legend.scheduler-border {
+    width:inherit; /* Or auto */
+    padding:0 10px; /* To give a bit of padding on the left and right */
+    border-bottom:none;
+}
+
+.control {
+  display: inline-flex;
+  align-items: center;
+}
+.control__indicator {
+  margin-right: 0.25rem;
+  border: 3px solid #0f75bc;
+  width: 1rem;
+  height: 1rem;
+
+  border-radius: 3px;
+}
+.control__indicator--radio {
+  border-radius: 30%;
+}
+.control__input:checked ~ .control__indicator {
+  background-color: #0f75bc;
+  background-size: 80%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+/* Visually hide the browser input to ensure it is still focusable via keyboards */
+.visually-hidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}

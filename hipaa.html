@@ -1,0 +1,116 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title></title>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="custom/style.css">
+ <script src="js/jquery.js"></script>
+  <script src="js/jquery-ui.js"></script>
+  <script src="js/hippa.js"></script>
+  <script src="js/signature.js"></script>
+  <script src="js/parsley.min.js"></script>
+   <script type="text/javascript">
+  function test(){
+    if ($('#hippa1').parsley().validate())  
+     {
+    
+       hipaaSave();
+      }
+    }
+  
+  
+  
+</script>
+  
+</head>
+<body>
+<div class="container">
+<div  class="col-md-12 text-center">
+	<p class="text-center heading">ACKNOWLEDGEMENT OF RECEIPT OF NOTICE OF PRIVACY PRACTICES</p>
+  <a  href="">CLICK Here to Read HIPAA Notice</a>
+</div>
+<fieldset  class="scheduler-border">
+	<legend  class="scheduler-border">Purpose of Consent</legend>
+<form>
+	<div class="row">
+	<div class="col-md-12">
+<p>
+<b>Purpose of Consent:</b> By signing this form, you will consent to our use and disclosure of
+your protected health information to carry out treatment, payment activities, and
+healthcare operations.<br>
+<b>Notice of Privacy Practices:</b>You have the right to read our Notice of Privacy Practices
+before you decide whether to sign this Consent. Our Notice provides a description of our
+treatment, payment activities, and healthcare operations, of the uses and disclosures we
+may make of your protected health information, and of other important matters about
+your protected health information. A copy of our Notice accompanies this Consent. We
+encourage you to read it carefully and completely before signing this Consent.
+We reserve the right to change our privacy practices as described in our Notice of Privacy
+Practices. If we change our privacy practices, we will issue a revised notice of Privacy
+Practices, which will contain the changes. Those changes may apply to any of your
+protected health information that we maintain.
+You may obtain a copy of our Notice of Privacy Practices, including any revisions of our
+Notice, at any time by contacting us at the abovementioned address.
+Right to Revoke: You will have the right to revoke this Consent at any time by giving us
+written notice of your revocation submitted to this office. Please understand that
+revocation of this Consent will not affect any action we took in reliance on this Consent
+before we received your revocation, and that we may decline to treat you or to continue
+treating you if you revoke this Consent. 
+  </p>
+	</div>
+		<div class="col-md-6">
+			<label>Childs Name</label>
+			<input size="20" class="form-control" name="HP_ChildsName" required type="text"/>
+		</div>
+		<div class="col-md-6">
+			<label>Your Name: <span class="required"></span></label>
+			<input size="20" name="HP_YourName" class="text form-control" id="HP_YourName" placeholder="Your Name" required maxlength="100" maxsize="100" type="text" />
+		</div>
+		<div class="col-md-6">
+			   <label>Relationship to Patient<span class="required"></span></label>
+			   <select name="HP_Relationship" required class="form-control">
+			        <option value="">Select One</option>
+			        <option value="Father">Father</option>
+			        <option value="Mother">Mother</option>
+			        <option value="Guardian">Guardian</option>
+			    </select>
+		</div>
+		<div class="col-md-6">
+			<label>Date:</label>
+			<input size="20" name="SI_SignedOn" class="text form-control" id="SignedOn_S"  maxlength="100"maxsize="100" type="text" >
+			<script>
+    var d = new Date();
+    document.getElementById("SignedOn_S").value = d.toLocaleDateString();
+  </script>
+		</div>
+		<div class="col-md-6">
+			<label>Signature:<span class="required"></span></label>
+			<!--  <canvas required class="pad" id="newSignature" style="position: relative; margin: 0; padding: 0; border: 0px solid #c4caac;"></canvas> -->
+             <div id="canvas">
+           
+                        <canvas class="pad" id="newSignature"
+                        style="position: relative; margin: 0; padding: 0; border: 1px solid #c4caac;"></canvas>
+                </div>
+
+                <script>
+      signatureCapture();
+                </script>
+    <br>
+                <button class="btn" type="button" onclick="signatureClear()">
+                        Clear signature
+                </button>
+                </br></br>
+                <button type="button" class="btn btn-primary" id="btnSubmit" onclick="test()">Submit</button>
+		</div>
+	</div>
+</form>
+</fieldset>
+</div>
+
+
+<!--Required JS -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>

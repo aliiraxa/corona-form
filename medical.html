@@ -1,0 +1,447 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title></title>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="custom/style.css" />
+   <script src="js/jquery.js"></script>
+  <script src="js/jquery-ui.js"></script>
+  <script src="js/signature.js"></script>
+  <script src="js/parsley.min.js"></script>
+   <script type="text/javascript">
+ $(document).ready(function() {
+    $('#notoall').click(function(event) {  //on click 
+        if(this.checked) { // check select status
+            $('.checkbox1').each(function() { //loop through each checkbox
+                this.checked = true;
+                //alert('parsley-id-multiple-' + this.name);
+                $('#parsley-id-multiple-' + this.name).hide().removeClass("parsley-required");
+                           
+            });
+        }else{
+            $('.checkbox1').each(function() { //loop through each checkbox
+                this.checked = false; //deselect all checkboxes with class "checkbox1"
+                $('#parsley-id-multiple-' + this.name).show().addClass("parsley-required");
+             });         
+        }
+    });
+    
+});
+
+
+  function verify(){
+    
+      if ($('#medical1').parsley().validate())  
+           {
+           medicalSave();
+          }
+   }
+  </script>
+  
+</head>
+<body>
+
+<!-- Dental/Medical History  -->
+<div class="container">
+	<p class="text-center heading">Smiles for Kids Dental/Medical History</p>
+	<fieldset class="scheduler-border">
+		<legend class="scheduler-border">CHILD'S INFORMATION</legend>
+	<form >
+		<div class="row">
+		<div class="col-md-6">
+			<label>Childs Name</label>
+			<input size="20" name="CH_ChildsName" class="text form-control" id="CH_ChildsFirstName" placeholder="Child's Name" required maxlength="100" maxsize="100" type="text" />
+		</div>
+		<div class="col-md-6">
+			<label>Childs DOB</label>
+			<input size="20" name="CH_ChildsDateOfBirth" class="text form-control" id="CH_ChildsDateOfBirth"  placeholder="MM/DD/YYYY" required maxlength="100" maxsize="100" type="date" />
+		</div>
+			<div class="col-md-12">
+				<p>Your child’s health, as well as any medications which your child takes, can have an interrelationship with the dental care you child receives. <br>Please answer each question completely.</p>
+			</div>
+			<div class="col-md-6">
+			<label>How often does your child brush?	</label>
+			 <select name="BF_HowOftenDoesYourChildBrush?" class="form-control">
+   			<option value="">Select One</option>
+		        <option value="Never">Never</option>
+		        <option value="One time a day">One time a day</option>
+		         <option value="Two times a day">Two times a day</option>
+		        <option value="More than 3 times a day">More than 3 times a day</option>
+		    </select>
+		</div>
+		<div class="col-md-6">
+			   <label>How often does your child floss?</label>
+			   <select name="BF_HowOftenDoesYourChildFloss?" class="form-control">
+ 		  <option value="">Select One</option>
+        <option value="Never">Never</option>
+        <option value="One time a day">One time a day</option>
+         <option value="Two times a day">Two times a day</option>
+        <option value="More than 3 times a day">More than 3 times a day</option>
+   		 </select>
+		</div>
+		<div class="col-md-12">
+			<p>Does your child</p>
+		</div> 
+		<div class="col-md-6">
+			<label>Take fluoride supplements</label>
+				<div class="float-right">
+			<input   type="radio"  name="DC_TakeFluorideSupplements" value="Yes">Yes
+    		<input type="radio"  class="dccheckbox" NAME="DC_TakeFluorideSupplements" value="No">No
+				</div>
+		</div>
+		<div class="col-md-6">
+		 <label>Use pacifier</label>
+			<div class="float-right">
+				<input type="radio"  name="DC_UsePacifier" value="Yes" >Yes
+	    <input type="radio"  class="dccheckbox" NAME="DC_UsePacifier" value="No">No
+			</div>
+		</div>
+		<div class="col-md-6">
+			<label>Suck thumb or finger</label>
+			<div class="float-right">
+				 <input type="radio"  name="DC_SuckThumbOrFinger" value="Yes">Yes
+    		<input type="radio"  class="dccheckbox" NAME="DC_SuckThumbOrFinger" value="No">No
+			</div>
+		</div>
+		<div class="col-md-6">
+		<label>Bite or chew nails</label>
+			<div class="float-right">
+	<input type="radio"  name="DC_BiteOrChewNails" value="Yes">Yes
+    <input type="radio"  class="dccheckbox" NAME="DC_BiteOrChewNails" value="No">No
+			</div>
+		</div><div class="col-md-6">
+   <label>Grind teeth</label>
+			<div class="float-right">
+				 <input type="radio"  name="DC_GrindTeeth" value="Yes">Yes
+    <input type="radio"  class="dccheckbox" NAME="DC_GrindTeeth" value="No">No
+			</div>
+		</div><div class="col-md-6">
+   <label>Clench jaws</label>
+			<div class="float-right">
+				 <input type="radio"  name="DC_ClenchJaws" value="Yes">Yes
+    <input type="radio"  class="dccheckbox" NAME="DC_ClenchJaws" value="No">No
+			</div>
+		</div>
+		<div class="col-md-6">
+			 <label>Was your child breast fed</label>
+			<div class="float-right">
+				<input type="radio"  name="DC_WasYourChildBreastFed" value="Yes">Yes
+    <input type="radio"  class="dccheckbox" NAME="DC_WasYourChildBreastFed" value="No">No
+			</div>
+		</div>
+		<div class="col-md-6">
+ 		<label>Age discontinued</label>			
+ 		<div class="float-right">
+			<input size="20" name="DC_AgeDiscontinued" class="text form-control" id="AgeDiscontinued_S"  maxlength="100" maxsize="100" type="text">
+			</div>
+		</div>
+		<div class="col-md-6">
+  		 <label>Was your child bottle fed</label>
+			<div class="float-right">
+				<input type="radio"  name="DC_WasYourChildBottleFed" value="Yes">Yes
+   			 <input type="radio"  class="dccheckbox" NAME="DC_WasYourChildBottleFed" value="No">No
+			</div>
+		</div>
+		<div class="col-md-6">
+  		   <label>Age discontinued bottle</label>
+			<div class="float-right">
+				<input size="20" name="DC_AgeDiscontinuedBottle" class="text form-control" id="AgeDiscontinued_S"  maxlength="100" maxsize="100" type="text" class="">
+			</div>
+		</div>
+		<div class="col-md-12">
+			<p>Has your child ever had the following: (please check if any of the below apply):</p>
+			<input type="checkbox" id="notoall" >Click for No to All
+		</div>
+		<div class="col-md-4">
+			<label>Asthma<span class="required"></span></label>
+			<div class="float-right" >
+			<input type="radio"   name="MH_Asthma" value="Yes" required >Yes
+      		<input type="radio"  class="checkbox1" NAME="MH_Asthma" value="No">No
+			</div>
+		</div>
+		<div class="col-md-4">
+     		 <label>Autisum<span class="required"></span></label>
+			<div class="float-right" >
+			 <input type="radio"  NAME="MH_Autisum" value="Yes" required >Yes
+      		<input type="radio"  class="checkbox1" NAME="MH_Autisum" value="No">No
+			</div>
+		</div>
+		<div class="col-md-4">
+         <label>Anemia<span class="required"></span></label>
+			<div class="float-right" >
+			<input type="radio"  NAME="MH_Anemia" value="Yes" required >Yes
+      		<input type="radio"  class="checkbox1" NAME="MH_Anemia" value="No">No
+			</div>
+		</div>
+		<div class="col-md-4">
+   			<label>ADHD<span class="required"></span></label>
+			<div class="float-right">
+			 <input type="radio"  NAME="MH_ADHD" value="Yes" required >Yes
+     		 <input type="radio"  class="checkbox1" NAME="MH_ADHD" value="No">No
+			</div>
+		</div>
+		<div class="col-md-4">
+      		<label>Bleeding Problems<span class="required"></span></label>
+			<div class="float-right" >
+			<input type="radio"  name="MH_BleedingProblems" value="Yes" required >Yes
+      		<input type="radio"  class="checkbox1" NAME="MH_BleedingProblems" value="No">No
+			</div>
+		</div>
+		<div class="col-md-4">
+   			<label>Brain Injury<span class="required"></span></label>
+			<div class="float-right" >
+			<input type="radio"  NAME="MH_BrainInjury" value="Yes" required >Yes
+      		<input type="radio"  class="checkbox1" NAME="MH_BrainInjury" value="No">No
+			</div>
+		</div>
+		<div class="col-md-4">
+			<label>Cancer<span class="required"></span></label>
+			<div class="float-right" >
+			<input type="radio"  NAME="MH_Cancer" value="Yes" required >Yes
+      		<input type="radio"  class="checkbox1" NAME="MH_Cancer" value="No">No
+			</div>
+		</div>
+		<div class="col-md-4">
+         <label>Cerebral Palsy<span class="required"></span></label>
+			<div class="float-right" >
+			<input type="radio"  NAME="MH_CerebralPalsy" value="Yes" required >Yes
+     		 <input type="radio"  class="checkbox1" NAME="MH_CerebralPalsy" value="No">No
+			</div>
+		</div>
+		<div class="col-md-4">
+   			<label>Convulsion/Seizures<span class="required"></span></label>
+			<div class="float-right" >
+			 <input type="radio"  NAME="MH_ConvulsionSeizures" value="Yes" required >Yes
+     		 <input type="radio"  class="checkbox1" NAME="MH_ConvulsionSeizures" value="No">No
+			</div>
+		</div>
+		<div class="col-md-4">
+      		<label>Cystic Fibrosis<span class="required"></span></label>
+			<div class="float-right" >
+			<input type="radio"  name="MH_CysticFibrosis" value="Yes" required >Yes
+      		<input type="radio"  class="checkbox1" NAME="MH_CysticFibrosis" value="No">No
+			</div>
+		</div>
+		<div class="col-md-4">
+     		 <label>Developmentally Delayed<span class="required"></span></label>
+			<div class="float-right" >
+			<input type="radio"  NAME="MH_DevelopmentallyDelayed" value="Yes" required >Yes
+      		<input type="radio"  class="checkbox1" NAME="MH_DevelopmentallyDelayed" value="No">No
+			</div>
+		</div>
+		<div class="col-md-4">
+        	 <label>Diabetes<span class="required"></span></label>
+			<div class="float-right" >
+			<input type="radio"  NAME="MH_Diabetes" value="Yes" required >Yes
+      		<input type="radio"  class="checkbox1" NAME="MH_Diabetes" value="No">No
+			</div>
+		</div>
+		<div class="col-md-4">
+   			<label>Eye Problems<span class="required"></span></label>
+			<div class="float-right" >
+			<input type="radio"  NAME="MH_EyeProblems" value="Yes" required >Yes
+     		 <input type="radio"  class="checkbox1" NAME="MH_EyeProblems" value="No">No
+			</div>
+		</div>
+		<div class="col-md-4">
+      		<label>Hearing Loss<span class="required"></span></label>
+			<div class="float-right" >
+			 <input type="radio"  name="MH_HearingLoss" value="Yes" required >Yes
+      		<input type="radio"  class="checkbox1" NAME="MH_HearingLoss" value="No">No
+			</div>
+		</div>
+		<div class="col-md-4">
+      		<label>Heart Murmur<span class="required"></span></label>
+			<div class="float-right" >
+			<input type="radio"  NAME="MH_HeartMurmur" value="Yes" required >Yes
+      		<input type="radio"  class="checkbox1" NAME="MH_HeartMurmur" value="No">No
+			</div>
+		</div>
+		<div class="col-md-4">
+         <label>Hepatitis<span class="required"></span></label>
+			<div class="float-right" >
+			<input type="radio"  NAME="MH_Hepatitis" value="Yes" required >Yes
+      		<input type="radio"  class="checkbox1" NAME="MH_Hepatitis" value="No">No
+			</div>
+		</div>
+		<div class="col-md-4">
+   			<label>HIV (AIDS)<span class="required"></span></label>
+			<div class="float-right" >
+			 <input type="radio"  NAME="MH_HIVAIDS" value="Yes" required >Yes
+      		<input type="radio"  class="checkbox1" NAME="MH_HIVAIDS" value="No">No
+			</div>
+		</div>
+		<div class="col-md-4">
+      		<label>Jaundice<span class="required"></span></label>
+			<div class="float-right" >
+			<input type="radio"  name="MH_Jaundice" value="Yes" required >Yes
+    	  <input type="radio"  class="checkbox1" NAME="MH_Jaundice" value="No">No
+			</div>
+		</div>
+		<div class="col-md-4">
+     		 <label>Kidney Problems<span class="required"></span></label>
+			<div class="float-right" >
+			 <input type="radio"  NAME="MH_KidneyProblems" value="Yes" required >Yes
+     		 <input type="radio"  class="checkbox1" NAME="MH_KidneyProblems" value="No">No
+			</div>
+		</div>
+		<div class="col-md-4">
+         <label>Leukemia<span class="required"></span></label>
+			<div class="float-right" >
+			 <input type="radio"  NAME="MH_Leukemia" value="Yes" required >Yes
+      		<input type="radio"  class="checkbox1" NAME="MH_Leukemia" value="No">No
+			</div>
+		</div>
+		<div class="col-md-4">
+  		 <label>Measles<span class="required"></span></label>
+			<div class="float-right" >
+			 <input type="radio"  NAME="MH_Measles" value="Yes" required >Yes
+     		 <input type="radio"  class="checkbox1" NAME="MH_Measles" value="No">No
+			</div>
+		</div>
+		<div class="col-md-4">
+      		<label>Mental Disability<span class="required"></span></label>
+			<div class="float-right" >
+			<input type="radio"  name="MH_MentalDisability" value="Yes" required >Yes
+      		<input type="radio"  class="checkbox1" NAME="MH_MentalDisability" value="No">No
+			</div>
+		</div>
+		<div class="col-md-4">
+      		<label>Orthopedic Problems<span class="required"></span></label>
+			<div class="float-right" >
+		   <input type="radio"  NAME="MH_OrthopedicProblems" value="Yes" required >Yes
+      		<input type="radio"  class="checkbox1" NAME="MH_OrthopedicProblems" value="No">No
+			</div>
+		</div>
+		<div class="col-md-4">
+         <label>Otitis<span class="required"></span></label>
+			<div class="float-right" >
+			<input type="radio"  NAME="MH_Otitis" value="Yes" required >Yes
+     		 <input type="radio"  class="checkbox1" NAME="MH_Otitis" value="No">No
+			</div>
+		</div>
+		<div class="col-md-4">
+   			<label>Pneumonia<span class="required"></span></label>
+			<div class="float-right" >
+			<input type="radio"  NAME="MH_Pneumonia" value="Yes" required >Yes
+     		 <input type="radio"  class="checkbox1" NAME="MH_Pneumonia" value="No">No
+			</div>
+		</div>
+		<div class="col-md-4">
+      <label>Rheumatic Fever<span class="required"></span></label>
+			<div class="float-right" >
+			 <input type="radio"  name="MH_RheumaticFever" value="Yes" required >Yes
+      		<input type="radio"  class="checkbox1" NAME="MH_RheumaticFever" value="No">No
+			</div>
+		</div>
+		<div class="col-md-4">
+      		<label>Scarlet Fever<span class="required"></span></label>
+			<div class="float-right" >
+			 <input type="radio"  NAME="MH_ScarletFever" value="Yes" required >Yes
+      		<input type="radio"  class="checkbox1" NAME="MH_ScarletFever" value="No">No
+			</div>
+		</div>
+		<div class="col-md-6">
+			 <label>Please list any other relevant Medical Dental condition:</label>
+			  <textarea name="BI_PleaseListAnyOtherRelevantMedicalDentalCondition" class="text form-control" id="BI_Other_S"></textarea>
+		</div>
+		<div class="col-md-6">
+			 <label>Current medication taken: </label>
+			 <input type="text"  class='oneline form-control'  name="BI_CurrentMedicationTaken" id="BI_CurrentMedicationTaken_S">
+		</div>
+		<div class="col-md-6">
+			<label>Allergies or adverse reactions to any medications(penicillin, sulfas): </label>
+			<input   type="text"   class='oneline form-control' name="BI_AllergiesOrAdverseReactionsToAnyMedications" id="BI_Allergies_S" >
+
+		</div>
+		<div class="col-md-6">
+			<label>Allergies to any substances(e.g. latex): </label>
+			<input   type="text"   class="oneline form-control" name="BI_AllergiesToAnySubstances" id="BI_AllergiesToAnySubstances_S" >
+            
+		</div>
+		<div class="col-md-6">
+			 <label>Previous hospitalizations, surgeries, or serious illnesses, and date: </label>
+			  <input  type="text"  class="oneline form-control" name="BI_PreviousHospitalizationsSurgeriesOrSeriousIllnessesAndDate" id="BI_PreviousHospitalizations_S">
+		</div>
+		<div class="col-md-6">
+			<label>Is there anything specific you would like to discuss with Doctor today? </label>
+			<textarea name="BI_IsThereAnythingSpecificYouWouldLikeToDiscussWithDoctorToday?" class="text form-control" id="MH_Doctor_S"></textarea>
+		</div>
+		<div class="col-md-6">
+			<label>Date of last dental visit: </label>
+			 <input size="20" name="OT_DateOfLastDentalVisit" class="text form-control" id="OT_DateOfLastDentalVisit_S" maxlength="100" maxsize="100" type="text">
+		</div>
+		<div class="col-md-6">
+			<label>Previous dentist:</label>
+			<input size="20" name="OT_PreviousDentist" class="text form-control" id="OT_PreviousDentist_S" maxlength="100" maxsize="100" type="text">
+		</div>
+		<div class="col-md-6">
+			   <label>Child’s pediatrician:<span class="required"></span></label>
+				<input size="20" name="OT_ChildsPediatrician" class="text form-control" id="OT_ChildsPediatrician_S"   maxlength="100" maxsize="100" type="text" required>
+		</div>
+		<div class="col-md-6">
+			    <label>Phone number</label>
+			    <input size="20" name="OT_PhoneNumber" class="text form-control" id="OT_PhoneNumber_S"   maxlength="100" maxsize="100" type="text">
+		</div>
+		<div class="col-md-12">
+			<label>Authorization and Release</label>
+			<p>
+    To the best of my knowledge, the questions on this form have been accurately answered. I understand that providing incorrect information can put my child’s health at risk and that it is my responsibility to inform the dental office of any changes in my child’s medical status. I authorize the dental staff to perform the necessary dental services that my child may need. I also authorize the dentist to release any information including the diagnosis and the records of treatment or examination rendered to my child during the period of such care to third party payers and/or other health practitioners as necessary. I further acknowledge the receipt of the Dental Materials Fact Sheet and HIPAA Privacy Form.</p>
+		</div>
+		<div class="col-md-6">			 
+		  <label>E-mail Address:<span class="required"></span></label>
+		   <input size="20" name="SI_EmailAddress" class="text form-control" id="EmailAddress_S" maxlength="100" maxsize="100" type="email" required >
+		</div>
+		<div class="col-md-6">
+		 <label>Signed By:<span class="required"></span></label>
+		<input size="20" name="SI_SignedBy" class="text form-control" id="Name_S" maxlength="100" maxsize="100" type="text" required>
+		</div>
+		<div class="col-md-6">
+		 <label>Signature: <span class="required"></span></label>	 
+                <div id="canvas">
+		       
+                        <canvas class="pad" id="newSignature"
+                        style="position: relative; margin: 0; padding: 0; border: 1px solid #c4caac;"></canvas>
+                </div>
+
+                <script>
+			signatureCapture();
+                </script>
+		<br>
+                <button class="btn" type="button" onclick="signatureClear()">
+                        Clear signature
+                </button>  
+		</div>
+		<div class="col-md-6">
+			   <label>Date:</label>
+				<input size="20" name="SI_SignedOn" class="text form-control" id="SignedOn_S" maxlength="100"maxsize="100" type="text" >
+		<script>
+			var d = new Date();
+			document.getElementById("SignedOn_S").value = d.toLocaleDateString();
+			</script>		
+		</div>
+
+		<div class="col-md-6"><br>
+		<button type="button" class="btn btn-primary" id="btnSubmit" onclick="verify()">Submit</button>
+		</div>
+		
+		</div>
+	</form>
+	</fieldset>
+</div>
+
+
+
+
+
+
+
+
+
+<!--Required JS -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>

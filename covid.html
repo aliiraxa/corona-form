@@ -1,0 +1,170 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title></title>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="custom/style.css" />
+    <script src="js/jquery.js"></script>
+  <script src="js/jquery-ui.js"></script>
+  <script src="js/covid.js"></script>
+  <script src="js/signature.js"></script>
+  <script src="js/parsley.min.js"></script>
+   <script type="text/javascript">
+  function test(){
+    if ($('#covid1').parsley().validate())  
+     {
+    
+       covidSave();
+      }
+    }
+  
+  
+  
+</script>
+  
+</head>
+<body>
+<div class="container">
+ <div class="col-md-12 text-center">
+    <p class="heading">Coronavirus (COVID-19) Pandemic Dental Treatment Consent Form</p>
+    <a href="">CLICK Here to Read about CDC Coronavirus (COVID-19) Info</a>
+ </div>
+  <fieldset class="scheduler-border">
+    <legend class="scheduler-border">Purpose of Consent</legend>
+    <form>
+      <div class="row">
+        <div class="col-md-12">
+           <p>
+                  <b>Purpose of Consent:</b> By signing this form, you will consent knowingly and willingly consent to have dental treatment completed during the COVID-19 pandemic.<br>
+                  I understand the COVID-19 virus has a long incubation period during which carriers of the virus may not show symptoms and still be highly contagious. It is impossible to determine who has it and who does not given the current limits in virus testing.
+                  Dental procedures create water spray which is how the disease is spread. The ultra-fine nature of the spray can linger in the air for minutes to sometimes hours, which can transmit the COVID-19 virus. We encourage you to read it carefully and completely before signing this Consent.
+ 
+                </p>
+            </div>
+          </div>
+               <div class="row">
+                 <div class="col-md-9">
+                    <label><p align="justify"><span class="required"></span> I have been made aware of the CDC and ADA guidelines that under the current pandemic all non-urgent dental care is not recommended. Dental visits should be limited to the treatment of pain, infection, conditions that significantly inhibit normal operation of teeth and mouth, and issues that may cause anything listed above within the next 3-6 months.</p></label>
+                 </div>
+                 <div class="col-md-3">
+                   <input size="20" placeholder="Initial" class="form-control" name="CV_Initial2" required type="text" />
+                 </div>
+               </div>
+               <div class="row">
+                 <div class="col-md-9">
+                    <label><p align="justify"><span class="required"></span> I confirm I am seeking treatment for a condition that meets these criteria.</p></label>
+                 </div>
+                 <div class="col-md-3">
+                    <input size="20" placeholder="Initial" class="form-control" name="CV_Initial3" required type="text" />
+                 </div>
+               </div>
+                
+                <div class="row">
+                  <div class="col-md-9">
+                     <label><p align="justify"><span class="required"></span> I confirm that I am not presenting any of the following symptoms of COVOID-19 that includes
+                  <font color=red>Fever, Shortness of Breath, Dry Cough, Runny Nose ,Sore Throat. </font>
+                </p></label>
+                  </div>
+                  <div class="col-md-3">
+                      <input size="20" placeholder="Initial" class="form-control" name="CV_Initial4" required type="text" />
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-9">
+                    <label><p align="justify"><span class="required"></span> I understand that air travel significantly increases my risk of contracting and transmitting the COVID-19 virus. And the CDC recommends social distancing of at least 6 feet for a period of 14 days to anyone who has, and this is not possible with dentistry.</p></label>
+                  </div>
+                  <div class=" col-md-3">
+                        <input size="20" placeholder="Initial" class="form-control" name="CV_Initial5" required type="text" />
+                  </div>
+                </div>
+                 
+                 <div class="row">
+                   <div class="col-md-9">
+                      <label><p align="justify"><span class="required"></span> I verify that I have not traveled outside the United States in the past 14 days to countries that have been affected by COVID-19. </p></label>
+                   </div>
+                   <div class="col-md-3">
+                          <input size="20" placeholder="Initial" class="form-control" name="CV_Initial6" required type="text" />
+                   </div>
+                 </div>
+            
+                 <div class="row">
+                   <div class="col-md-9">
+                       <label><p align="justify"><span class="required"></span> I verify that I have not traveled domestically within the United States by commercial airline, bus, or train within the past 14 days. </p></label>
+                   </div>
+                   <div class="col-md-3">
+                      <input size="20" placeholder="Initial" class="form-control" name="CV_Initial7" required type="text" />
+                   </div>
+                 </div>
+                 <div class="row">
+                   <div class="col-md-3">
+                      <label>Child's Name: <span class="required"></span></label>
+                   </div>
+                   <div class="col-md-3">
+                     <input size="20" name="CV_ChildsName" class="form-control" required type="text"/>
+                   </div>
+                   <div class="col-md-3">
+                     <label>Your Name: <span class="required"></span></label>
+                   </div>
+                   <div class="col-md-3">
+          <input size="20" name="CV_YourName" class="text form-control" id="CV_YourName" placeholder="Your Name" required maxlength="100" maxsize="100" type="text" />
+                   </div>
+                 </div>
+     
+   
+           <br>
+        <div class="row">
+         <div class="col-md-3">
+            <label>Relationship to Patient<span class="required"></span></label>
+         </div>
+         <div class="col-md-3">
+            <select name="CV_Relationship" class="form-control" required>
+        <option value="">Select One</option>
+        <option value="Father">Father</option>
+        <option value="Mother">Mother</option>
+        <option value="Guardian">Guardian</option>
+      </select>
+         </div>
+
+         <div class="col-md-3">
+           <label>Date:</label>
+         </div>
+         <div class="col-md-3"> 
+           <input size="20" name="SI_SignedOn" class="text form-control" id="SignedOn_S"  maxlength="100"maxsize="100" type="text" >
+         </div>
+        </div>
+        
+      
+        <div class="col-md-3">
+          <label>Signature:<span class="required"></span></label>
+<!-- 
+                        <canvas required class="pad" id="newSignature" style="position: relative; margin: 0; padding: 0; border: 0px solid #c4caac;"></canvas> -->
+                  <div id="canvas">
+           
+                        <canvas class="pad" id="newSignature"
+                        style="position: relative; margin: 0; padding: 0; border: 1px solid #c4caac;"></canvas>
+                </div>
+
+                <script>
+      signatureCapture();
+                </script>
+    <br>
+                <button class="btn" type="button" onclick="signatureClear()">
+                        Clear signature
+                </button>
+                </br> <br>
+                <button type="button" class="btn btn-primary" id="btnSubmit" onclick="test()">Submit</button>
+        </div>
+      </div>
+    </form>
+  </fieldset>
+</div>
+
+
+<!--Required JS -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,498 @@
+  <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Patient Info</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <!-- <link rel="stylesheet" href="css/jquery-ui.css"> -->
+  <script src="js/jquery.js"></script>
+  <script src="js/jquery-ui.js"></script>
+  <!-- <link rel="stylesheet" href="css/pfandroid.css">
+  <link rel="stylesheet" href="css/parsley.css"> -->
+  <script src="js/addChild1.js"></script>
+  <script src="js/copy.js"></script>
+  <script src="js/signature.js"></script>
+  <script src="js/parsley.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="custom/style.css">
+  <script>
+  function verify(){
+      if ($('#form1').parsley().validate())  
+           {
+           signatureSave();
+          }
+   }
+  </script>
+</head>
+<body>
+
+<!-- Dental/Medical History  -->
+<div class="container">
+	<p class="headline text-center heading">Smiles for Kids Dental/Medical History</p>
+
+<div id="google_translate_element"></div><script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({pageLanguage: 'en', includedLanguages: 'es', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+}
+</script><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+
+	<fieldset class="scheduler-border">
+		<legend class="scheduler-border">CHILD'S INFORMATION</legend>
+	<form method="post" accept-charset="utf-8" name="form1" id="form1" data-parsley-validate  onsubmit="verify()">
+		<input name="hidden_data" id='hidden_data' type="hidden"/>
+
+  		<div id="TextBoxesGroup">
+      	<div id="TextBoxDiv1" class="row">
+			<div class="col-md-6">
+				<label for="CH_ChildsFirstName1"  class="required">Child's First Name:</label>
+				<input class="form-control" size="20" name="CH_ChildsFirstName1" class="text" id="CH_ChildsFirstName1" placeholder="Child's First Name" required maxlength="100" maxsize="100" type="text" />
+			</div>
+			<div class="col-md-6">
+				<label for="CH_ChildsLastName1" class="required" >Child's Last Name:</label>
+				<input class="form-control" size="20" name="CH_ChildsLastName1" class="text" id="CH_ChildsLastName1"   placeholder="Child's Last Name" required maxlength="100" maxsize="100" type="text" />
+			</div>
+		</div>
+		<div id="Text2BoxDiv1" class="row">
+			<div class="col-md-6">
+				<label for="CH_ChildsDateOfBirth1" class="required"> Child's DOB :</label>
+				<input class="form-control" size="20" name="CH_ChildsDateOfBirth1" class="text" id="CH_ChildsDateOfBirth1"  placeholder="MM/DD/YYYY" required maxlength="100" maxsize="100" type="date" />
+			</div>
+			<div class="col-md-6">
+				<label>Child's Sex: <span class="required"></span></label>
+				<select class="browser-default custom-select" name="CH_ChildsSex1" id="CH_ChildsSex1" required value>
+			      <option value="">Select One</option>
+			      <option value="Male">Male</option>
+			      <option value="Female">Female</option>
+			    </select>
+			</div>
+		</div>
+      </div>
+    
+		<div class="row">
+			<div class="col-md-4">
+			</div>
+			<div class="col-md-4 text-center">
+				<input class="btn btn-primary mt-2" type='button' value='Add More Children' id='addButton'> <input class="btn btn-danger mt-2" type='button' value='Remove Children' id='removeButton'> 
+			</div>
+			<div class="col-md-4">
+			</div>
+		</div>
+	</form>
+	</fieldset>
+
+	<fieldset class="scheduler-border">
+		<legend class="scheduler-border">Parents Guardian Information</legend>
+		<div class="row">
+			<div class="col-md-12 sub-heading">Mother's Information</div>
+		</div>
+	<form >
+		<div class="row">
+			<div class="col-md-3">
+				<label>Relationship:<span class="required"></span></label>
+			</div>
+			<div class="col-md-9">
+				<div class="form-check form-check-inline">
+			   		<input class="form-check-input" name="MO_Relationship"   id="MRelationship_M" value="Mother" type="radio">
+      				<label class="style6 form-check-label" for="MRelationship_M">Mother</label>
+      				
+				</div>
+			<div class="form-check form-check-inline">
+				    <input class="form-check-input" name="MO_Relationship"   id="MRelationship_G" value="Guardian" type="radio">
+	      			<label class="style6 form-check-label" for="MRelationship_G">Guardian</label>
+			</div>
+			<div class="form-check form-check-inline">
+			   		<input class="form-check-input" name="MO_Relationship"  id="MRelationship_S" value="Stepmother" type="radio" required >
+      				<label class="style6 form-check-label" for="MRelationship_S">Stepmother</label> 
+			</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-6">
+				<label for="MothersFirstName_S" class="required">First Name:</label>
+				<input  size="20" name="MO_MothersFirstName" class="form-control text" id="MothersFirstName_S"  required maxlength="100" maxsize="100" type="text">
+			</div>
+			<div class="col-md-6">
+				<label for="MothersLastName_S" class="required">Last Name:</label>
+				<input size="20" name="MO_MothersLastName" class="form-control text" id="MothersLastName_S"  required maxlength="100" maxsize="100" type="text">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-6">
+				<label for="MO_MothersDateOfBirth" class="required">Mother's Birthdate:</label>
+				<input size="20" name="MO_MothersDateOfBirth" class="form-control text" id="MO_MothersDateOfBirth"  placeholder="MM/DD/YYYY" required maxlength="100" maxsize="100" type="date" />
+			</div>
+			<div class="col-md-6">
+				<label for="MothersSsn_S" class="required">Mother's SSN :</label>
+				 <input size="20" name="MO_MothersSsn" class="form-control text" id="MothersSsn_S" required maxlength="100" maxsize="100" type="text">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-6">
+				<label for="MothersStreetAddress_S" class="required">Street Address:</label>
+				<input size="20" name="MO_MothersStreetAddress" class="form-control text" id="MothersStreetAddress_S" required maxlength="100" maxsize="100" type="text">
+			</div>
+			<div class="col-md-6">
+				<label for="MothersStreetAddress2_S" class="required">Street Address Line 2:</label>
+				 <input size="20" name="MO_MothersStreetAddress2" class="form-control text" id="MothersStreetAddress2_S" maxlength="100" maxsize="100" type="text">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-6">
+				<label for="MothersCity_S" class="required">City:</label>
+				<input size="20" name="MO_MothersCity" class="form-control text" id="MothersCity_S" required maxlength="100" maxsize="100" type="text">
+			</div>
+			<div class="col-md-6">
+				<label for="MothersState_S" class="required">State:</label>
+				 <input size="20" name="MO_MothersState" class="form-control text" id="MothersState_S" required maxlength="100" maxsize="100" type="text">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-6">
+				<label for="MothersZip_S" class="required">Zip:</label>
+				<input size="20" name="MO_MothersZip" class="form-control text" id="MothersZip_S" required maxlength="100" maxsize="100" type="text">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-6">
+				<label for="MothersEmployer_S" class="required">Mother's Employer:</label>
+				 <input size="20" name="MO_MothersEmployer" class="form-control text" id="MothersEmployer_S" maxlength="100" maxsize="100" type="text">
+			</div>
+			<div class="col-md-6">
+				<label for="MothersDriversLicens_S" class="required">Mother's Driver's License #:</label>
+				 <input size="20" name="MO_Mother'sDriversLicense" class="form-control text" id="MothersDriversLicens_S"  maxlength="100" maxsize="100" type="text">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-6">
+				<label for="MothersHomePhone_S" class="required">Mother's Home Phone:</label>
+				 <input size="20" name="MO_MothersHomePhone" class="form-control text" id="MothersHomePhone_S"maxlength="100" maxsize="100" required type="text">
+			</div>
+			<div class="col-md-6">
+				<label for="MothersWorkPhone_S" class="required">Mother's Work Phone:</label>
+				 <input size="20" name="MO_MothersWorkPhone" class="form-control text" id="MothersWorkPhone_S"maxlength="100" maxsize="100" type="text">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-6">
+				<label for="MothersMobilePhone_S" class="required">Mother's Mobile Phone:</label>
+				 <input size="20" name="MO_MothersMobilePhone" class="form-control text" id="MothersMobilePhone_S" maxlength="100" maxsize="100" required type="text">
+			</div>
+			<div class="col-md-6">
+				<label for="MothersOccupation_S" class="required">Mother's Occupation:</label>
+				 <input size="20" name="MO_MothersOccupation" class="form-control text" id="MothersOccupation_S" required maxlength="100" maxsize="100" type="text">
+			</div>
+		</div>
+		
+	</form>
+	</fieldset>
+	<fieldset class="scheduler-border">
+		<legend class="scheduler-border">Father's Information</legend>
+		<div class="row">
+			<div class="col-md-12 sub-heading">Father's Information</div>
+		</div>
+	<form >
+		<div class="row">
+			<div class="col-md-3">
+				<label>Relationship:<span class="required"></span></label>
+			</div>
+			<div class="col-md-9">
+				<div class="form-check form-check-inline">
+			   		<input class="form-check-input" name="MO_Relationship"   id="FRelationship_F" value="Father" type="radio">
+      				<label class="style6 form-check-label" for="FRelationship_F">Father</label>
+				</div>
+				<div class="form-check form-check-inline">
+				    <input class="form-check-input" name="MO_Relationship"   id="FRelationship_G" value="Guardian" type="radio">
+	      			<label class="style6 form-check-label" for="FRelationship_G">Guardian</label>
+				</div>
+				<div class="form-check form-check-inline">
+			   		<input class="form-check-input" name="MO_Relationship"  id="FRelationship_S" value="Stepfather" type="radio" required >
+      				<label class="style6 form-check-label" for="FRelationship_S">Stepfather</label> 
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-6">
+				<label for="FathersFirstName_S"  class="required">First Name:</label>
+				<input size="20" name="FA_FathersFirstName" class="form-control text" id="FathersFirstName_S" required maxlength="100" maxsize="100" type="text">
+			</div>
+			<div class="col-md-6">
+				<label for="FathersLastName_S" class="required" >Last Name:</label>
+				 <input size="20" name="FA_FathersLastName" class="form-control text" id="FathersLastName_S" required maxlength="100" maxsize="100" type="text">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-6">
+				<label for="FA_FathersDateOfBirth_S" class="required">Father's Birthdate:</label>
+				<input size="20" name="FA_FathersDateOfBirth" class="form-control text" id="FA_FathersDateOfBirth_S"  placeholder="MM/DD/YYYY" required maxlength="100" maxsize="100" type="date" />
+			</div>
+			<div class="col-md-6">
+				<label for="FathersSsn_S" class="required">Father's SSN :</label>
+				<input size="20" name="FA_FathersSsn" class="form-control text" id="FathersSsn_S" required maxlength="100" maxsize="100" type="text">
+			</div>
+		</div>
+		<!-- <div class="row">
+			<div class="col-md-6">
+				<label for="same_as_billing" class="required">Same as above:</label>
+				<input class="form-check-input" type="checkbox" id="same_as_billing">
+			</div>
+		</div> -->
+		<div class="row">
+			<div class="col-md-2">
+				<label><b>Same as above:</b><span class="required"></span></label>
+			</div>
+			<div class="col-md-10 mt-2">
+				<div class="form-check form-check-inline">
+			   		<input class="form-check-input" name="MO_Relationship"   id="MRelationship_M" value="Mother" type="checkbox">
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-6">
+				<label for="FathersStreetAddress_S" class="required">Street Address:</label>
+				<input size="20" name="FA_FathersStreetAddress" class="form-control text" id="FathersStreetAddress_S" required maxlength="100" maxsize="100" type="text">
+			</div>
+			<div class="col-md-6">
+				<label for="FathersStreetAddress2_S" class="required">Street Address Line 2:</label>
+				<input size="20" name="FA_FathersStreetAddress2" class="form-control text" id="FathersStreetAddress2_S" maxlength="100" maxsize="100" type="text">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-6">
+				<label for="FathersCity_S" class="required">City:</label>
+				<input size="20" name="FA_FathersCity" class="form-control text" id="FathersCity_S" required maxlength="100" maxsize="100"  type="text">
+			</div>
+			<div class="col-md-6">
+				<label for="FathersState_S" class="required">State:</label>
+				<input size="20" name="FA_FathersState" class="form-control text" id="FathersState_S" required maxlength="100" maxsize="100" type="text">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-6">
+				<label for="FathersZip_S" class="required">Zip:</label>
+				<input size="20" name="FA_FathersZip" class="form-control text" id="FathersZip_S" required maxlength="100" maxsize="100" type="text">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-6">
+				<label for="FathersEmployer_S" class="required">Father's Employer:</label>
+				<input size="20" name="FA_FathersEmployer" class="form-control text" id="FathersEmployer_S" maxlength="100" maxsize="100" type="text">
+			</div>
+			<div class="col-md-6">
+				<label for="FathersDriversLicens_S" class="required">Father's Driver's License #:</label>
+				<input size="20" name="FA_FathersDriversLicense" class="form-control text" id="FathersDriversLicens_S"  maxlength="100" maxsize="100" type="text">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-6">
+				<label for="FathersHomePhone_S" class="required">Father's Home Phone:</label>
+				<input size="20" name="FA_FathersHomePhone" class="form-control text" id="FathersHomePhone_S"maxlength="100" maxsize="100" required type="text">
+			</div>
+			<div class="col-md-6">
+				<label for="FathersDriversLicens_S" class="required">Father's Work Phone:</label>
+				<input size="20" name="FA_FathersWorkPhone" class="form-control text" id="FathersWorkPhone_S"maxlength="100" maxsize="100" type="text">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-6">
+				<label for="FathersMobilePhone_S" class="required">Father's Mobile Phone:</label>
+				<input size="20" name="FA_FathersMobilePhone" class="form-control text" id="FathersMobilePhone_S" maxlength="100" maxsize="100" required type="text">
+			</div>
+			<div class="col-md-6">
+				<label for="FathersOccupation_S" class="required">Father's Occupation:</label>
+				<input size="20" name="FA_FathersOccupation" class="form-control text" id="FathersOccupation_S" required maxlength="100" maxsize="100" type="text">
+			</div>
+		</div>
+	</form>
+	</fieldset>
+	<fieldset class="scheduler-border">
+		<legend class="scheduler-border">Responsible Party's Information</legend>
+	<form >
+		<div class="row">
+			<div class="col-md-6">
+				<label for="ResponsiblePartysFirstName_S"  class="required">First Name:</label>
+				<input size="20" name="RP_ResponsiblePartysFirstName" class="form-control text" id="ResponsiblePartysFirstName_S" required maxlength="100" maxsize="100" type="text">
+			</div>
+			<div class="col-md-6">
+				<label for="ResponsiblePartysLastName_S" class="required" >Last Name:</label>
+				<input size="20" name="RP_ResponsiblePartysLastName" class="form-control text" id="ResponsiblePartysLastName_S" required maxlength="100" maxsize="100" type="text">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-6">
+				<label for="ResponsiblePartysRelationship_S" class="required">Relationship :</label>
+				<input size="20" name="RP_ResponsiblePartysRelationship" class="form-control text" id="ResponsiblePartysRelationship_S" required maxlength="100" maxsize="100" type="text">
+			</div>
+			<div class="col-md-6">
+				<label for="ReferredBy_S" class="required">Referred to our office by :</label>
+				<input size="20" name="RP_ReferredBy" class="form-control text" id="ReferredBy_S" maxlength="100" maxsize="100" type="text">
+			</div>
+		</div>
+	</form>
+	</fieldset>
+	<fieldset class="scheduler-border">
+		<legend class="scheduler-border">INSURANCE INFORMATION</legend>
+		<div class="row">
+			<div class="col-md-12 sub-heading">PRIMARY (Note:If no insurnace please fill NA)</div>
+		</div>
+	<form >
+		<div class="row">
+			<div class="col-md-6">
+				<label for="PrimaryInsuranceCo_S" class="required" >Primary Insurance Co:</label>
+				<input size="20" name="IN_PrimaryInsuranceCo" class="form-control text" id="PrimaryInsuranceCo_S" maxlength="100" maxsize="100" type="text">
+			</div>
+			<div class="col-md-6">
+				<label for="PrimaryInsPhone_S" class="required" >Primary Ins. Phone #:</label>
+				<input size="20" name="IN_PrimaryInsPhone" class="form-control text" id="PrimaryInsPhone_S" maxlength="100" maxsize="100" type="text">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-6">
+				<label for="PrimaryInsCoAddress_S" class="required">Primary Ins. Co. Address:</label>
+				<input size="20" name="IN_PrimaryInsCoAddress" class="form-control text" id="PrimaryInsCoAddress_S" maxlength="100" maxsize="100" type="text">
+			</div>
+			<div class="col-md-6">
+				<label for="PrimaryInsuredName_S" class="required">Primary Insured Name:</label>
+				<input size="20" name="IN_PrimaryInsuredName" class="form-control text" id="PrimaryInsuredName_S" maxlength="100" maxsize="100" required type="text">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-6">
+				<label for="IN_PrimaryRelationship" class="required">Relationship:</label>
+				<input size="20" name="IN_PrimaryRelationship" class="form-control text" id="PrimaryRelationship_S" maxlength="100" maxsize="100" required type="text">
+			</div>
+			<div class="col-md-6">
+				<label for="PrimaryInsuredIDEmpl_S" class="required">Primary Insured ID/Employee:</label>
+				<input size="20" name="IN_PrimaryInsuredIDEmpl" class="form-control text" id="PrimaryInsuredIDEmpl_S" maxlength="100" maxsize="100" required  type="text">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-6">
+				<label for="PrimaryEmployer_S" class="required">Employer:</label>
+				<input size="20" name="IN_PrimaryEmployer" class="form-control text" id="PrimaryEmployer_S" required  maxlength="100"maxsize="100" type="text">
+			</div>
+			<div class="col-md-6">
+				<label for="PrimaryGroup_S" class="required">Group #:</label>
+				<input size="20" name="IN_PrimaryGroup" class="form-control text" id="PrimaryGroup_S" maxlength="100" maxsize="100" required type="text">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12 sub-heading">Secondary</div>
+		</div>
+		<div class="row">
+			<div class="col-md-6">
+				<label for="SecondaryInsuranceCo_S" class="required">Secondary Insurance Co:</label>
+				<input size="20" name="IN_SecondaryInsuranceCo" class="form-control text" id="SecondaryInsuranceCo_S" maxlength="100" maxsize="100" type="text">
+			</div>
+			<div class="col-md-6">
+				<label for="SecondaryInsPhone_S" class="required">Secondary Ins. Phone #:</label>
+				<input size="20" name="IN_SecondaryInsPhone" class="form-control text" id="SecondaryInsPhone_S" maxlength="100" maxsize="100" type="text">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-6">
+				<label for="SecondaryInsCoAddress_S" class="required">Secondary Ins. Co. Address:</label>
+				<input size="20" name="IN_SecondaryInsCoAddress" class="form-control text" id="SecondaryInsCoAddress_S" maxlength="100" maxsize="100" type="text">
+			</div>
+			<div class="col-md-6">
+				<label for="SecondaryInsuredName_S" class="required">Secondary Insured Name:</label>
+				<input size="20" name="IN_SecondaryInsuredName" class="form-control text" id="SecondaryInsuredName_S" maxlength="100" maxsize="100" type="text">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-6">
+				<label for="SecondaryRelationship_S" class="required">Relationship:</label>
+				<input size="20" name="IN_SecondaryRelationship" class="form-control text" id="SecondaryRelationship_S" maxlength="100" maxsize="100" type="text">
+			</div>
+			<div class="col-md-6">
+				<label for="SecondaryInsuredIDEmpl_S" class="required">Secondary Insured ID/Employee:</label>
+				<input size="20" name="IN_SecondaryInsuredIDEmpl" class="form-control text" id="SecondaryInsuredIDEmpl_S" maxlength="100" maxsize="100" type="text">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-6">
+				<label for="SecondaryEmployer_S" class="required">Employer:</label>
+				<input size="20" name="IN_SecondaryEmployer" class="form-control text" id="SecondaryEmployer_S" maxlength="100"maxsize="100" type="text">
+			</div>
+			<div class="col-md-6">
+				<label for="SecondaryGroup_S" class="required">Group #:</label>
+				<input size="20" name="IN_SecondaryGroup" class="form-control text" id="SecondaryGroup_S" maxlength="100" maxsize="100" type="text">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12">
+				<p>
+				    It is our policy to discuss our fees and financial arrangement openly
+				    and honestly with you.  Regardless of whether you have dental insurance
+				    or not, you are responsible for the full financial cost of dental
+				    treatment.  Every effort will be made to estimate to the best of our
+				    ability the total cost of dental treatment.  Please be aware that
+				    treatment rendered may vary from the estimated treatment plan due to the
+				    continual progression of dental decay with time.  Payment is expected
+				    as dental services are performed unless financial arrangements have been
+				    previously made with our office.
+				 </p>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-6">
+				<label for="EmailAddress_S" class="required">E-mail Address:</label>
+				<input size="20" name="SI_EmailAddress" class="form-control text" id="EmailAddress_S" maxlength="100" maxsize="100" required type="email">
+			</div>
+			<div class="col-md-6">
+				<label for="Name_S" class="required">Signed By:</label>
+				<input size="20" name="SI_SignedBy" class="form-control text" id="Name_S" maxlength="100" maxsize="100" required type="text">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-6">
+				<label  class="required">Signature:</label>
+				<!-- <textarea readonly class="form-control" rows="8"></textarea> -->
+				<!-- <input size="20" name="SI_EmailAddress" class="form-control text" id="EmailAddress_S" maxlength="100" maxsize="100" required type="email">
+
+
+				 -->
+
+				 <div id="canvas">
+		       
+                        <canvas class="pad" id="newSignature"
+                        style="position: relative; margin: 0; padding: 0; border: 1px solid #c4caac;"></canvas>
+                </div>
+
+                <script>
+			signatureCapture();
+                </script>
+		<br>
+                <button class="btn" type="button" onclick="signatureClear()">
+                        Clear signature
+                </button>
+			</div>
+			<div class="col-md-6">
+				<label for="SI_IPAddress_S" class="required">Date:</label>
+				<input   size="20" name="SI_IPAddress" class="form-control text" id="SI_IPAddress_S" required maxlength="100" maxsize="100" type="text">
+				<script>
+					var d = new Date();
+					document.getElementById("SignedOn_S").value = d.toLocaleDateString();
+					</script>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-4"></div>
+			<div class="col-md-4 text-center mt-3">
+				<button class="btn btn-primary" type="button" class="mybtn" id="btnSubmit" onclick="verify()">Submit</button>
+			</div>
+			
+			<div class="col-md-4"></div>
+		</div>
+	</form>
+	</fieldset>
+</div>
+
+
+
+<!--Required JS -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>
